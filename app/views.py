@@ -9,6 +9,7 @@ from .models import UserKeys
 
 
 # INDEX VIEW
+@login_required
 def index(request):
     return render(request, "pages/index.html")
 
@@ -80,8 +81,8 @@ def register_user(request):
             # Create a new user
             user = User.objects.create_user(username=username, email=email, password=password)
 
-            # Log in the user
-            login(request, user)
+            # # Log in the user
+            # login(request, user)
 
             # Redirect to a success page or home page
             return redirect('login-page')

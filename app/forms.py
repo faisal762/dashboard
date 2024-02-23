@@ -21,15 +21,40 @@ class LoginForm(forms.Form):
         }),
         label='Password'
     )
-    # remember_me = forms.BooleanField(required=False, widget=forms.CheckboxInput, label='Remember Me')
+    remember_me = forms.BooleanField(required=False, widget=forms.CheckboxInput, label='Remember Me')
 
 
     
 class RegisterForm(forms.Form):
-    username = forms.CharField(max_length=150, label='Username')
-    email = forms.EmailField(label='Email')
-    password = forms.CharField(widget=forms.PasswordInput, label='Password')
-    terms = forms.BooleanField(required=False, label='I agree to privacy policy & terms')
+    username = forms.CharField(
+        max_length=150, 
+        label='Username',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'id': 'email',
+            'name': 'username',
+            'placeholder': 'Enter your username',
+            'autofocus': 'autofocus'
+        }) )
+    email = forms.EmailField(
+        label='Email',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'id': 'email',
+            'name': 'username',
+            'placeholder': 'Enter your email',
+            'autofocus': 'autofocus'
+        })
+                             )
+    
+    password = forms.CharField(widget=forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'id': 'password',
+            'name': 'password',
+            'placeholder': 'enter password',
+            'aria-describedby': 'password'
+        }), label='Password')
+    terms = forms.BooleanField(required=True, label='I agree to privacy policy & terms')
 
 class VerifyMnemonicForm(forms.Form):
     mnemonic = forms.CharField(

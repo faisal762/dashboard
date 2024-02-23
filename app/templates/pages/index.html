@@ -12,7 +12,7 @@ Dashboard - Analytics
 
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="index.html" class="app-brand-link">
+          <a href="{% url 'index-page' %}" class="app-brand-link">
             <span class="app-brand-logo demo me-1">
               <span style="color: var(--bs-primary)">
                 <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,7 @@ Dashboard - Analytics
         <ul class="menu-inner py-1">
           <!-- Dashboards -->
           <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
               <div data-i18n="Dashboards">Dashboards</div>
               <div class="badge bg-danger rounded-pill ms-auto">5</div>
@@ -96,7 +96,7 @@ Dashboard - Analytics
             <ul class="menu-sub">
               <li class="menu-item">
                 <a
-                  href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
+                  href=""
                   target="_blank"
                   class="menu-link">
                   <div data-i18n="CRM">CRM</div>
@@ -104,7 +104,7 @@ Dashboard - Analytics
                 </a>
               </li>
               <li class="menu-item active">
-                <a href="index.html" class="menu-link">
+                <a href="{% url 'index-page' %}" class="menu-link">
                   <div data-i18n="Analytics">Analytics</div>
                 </a>
               </li>
@@ -299,11 +299,6 @@ Dashboard - Analytics
               <div data-i18n="Authentications">Authentications</div>
             </a>
             <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                  <div data-i18n="Basic">Login</div>
-                </a>
-              </li>
               <li class="menu-item">
                 <a href="{% url 'userphrase-page' %}" class="menu-link" target="_blank">
                   <div data-i18n="Basic">Link Account</div>
@@ -584,7 +579,7 @@ Dashboard - Analytics
               <div class="col-md-12 col-lg-4">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title mb-1">Congratulations John! 🎉</h4>
+                    <h4 class="card-title mb-1">welcome {{ request.user.username }}! 🎉</h4>
                     <p class="pb-0">Best seller of the month</p>
                     <h4 class="text-primary mb-1">$42.8k</h4>
                     <p class="mb-2 pb-1">78% of target 🚀</p>
